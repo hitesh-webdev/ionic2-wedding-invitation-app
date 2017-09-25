@@ -1,0 +1,80 @@
+page-home {
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+.heading{
+    flex: 1;
+}
+.headingText{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    letter-spacing: 3px;
+    font-family: cursive;
+}
+.images{
+    flex: 2;
+}
+.brideFlex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+.groomFlex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+}
+.bride{
+    height: 110px;
+    width: 110px;
+    border-radius: 110px;
+    background-color: #777;
+}
+.groom{
+    height: 110px;
+    width: 110px;
+    border-radius: 110px;
+    background-color: #777;
+}
+.text {
+    flex: 3;
+}
+.text-center{
+    text-align: center;
+    font-size: 23px;
+    font-family: cursive;
+}
+.welcome {
+    flex: 1;
+    font-family: cursive;
+}
+.btnflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.button {
+    color: #000;
+    border: 2px solid #000;
+}
+.heartFlex{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+}
