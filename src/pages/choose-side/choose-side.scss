@@ -1,0 +1,62 @@
+page-choose-side {
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-family: cursive;
+    padding: 0px;
+    background-color: #F3DF62;
+    color: #DB4437;
+}
+.choose {
+    flex: 1;
+    background-color: #AC634C;
+    color: #fff;
+}
+.chooseHeadingFlex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+}
+.bride {
+    flex: 4;
+}
+.brideImg {
+    height: 150px;
+    width: 150px;
+    border-radius: 150px;
+    background-color: #000;
+}
+.brideDesc, .groomDesc {
+    text-align: center;
+    font-size: 20px;
+}
+.brideFlex p {
+    font-size: 23px;
+    margin-top: 5px;
+}
+.groom {
+    flex: 4;
+}
+.groomImg {
+    height: 150px;
+    width: 150px;
+    border-radius: 150px;
+    background-color: #000;
+}
+.groomFlex p{
+    font-size: 23px;
+    margin-top: 5px;
+}
+.brideFlex, .groomFlex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+}
