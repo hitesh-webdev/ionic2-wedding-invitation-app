@@ -8,13 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ChooseSidePage } from '../pages/choose-side/choose-side';
 import { BrideProgramsPage } from '../pages/bride-programs/bride-programs';
+import { BhartiKhimnaniPage } from '../pages/bharti-khimnani/bharti-khimnani';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ChooseSidePage,
-    BrideProgramsPage
+    BrideProgramsPage,
+    BhartiKhimnaniPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { BrideProgramsPage } from '../pages/bride-programs/bride-programs';
     MyApp,
     HomePage,
     ChooseSidePage,
-    BrideProgramsPage
+    BrideProgramsPage,
+    BhartiKhimnaniPage
   ],
   providers: [
     StatusBar,

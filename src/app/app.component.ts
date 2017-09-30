@@ -6,11 +6,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ChooseSidePage } from '../pages/choose-side/choose-side';
 import { BrideProgramsPage } from '../pages/bride-programs/bride-programs';
+import { BhartiKhimnaniPage } from '../pages/bharti-khimnani/bharti-khimnani';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = BrideProgramsPage;
+  rootPage:any = BhartiKhimnaniPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
