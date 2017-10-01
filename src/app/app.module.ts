@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { ChooseSidePage } from '../pages/choose-side/choose-side';
 import { BrideProgramsPage } from '../pages/bride-programs/bride-programs';
 import { BhartiKhimnaniPage } from '../pages/bharti-khimnani/bharti-khimnani';
+import { SendWishesPage } from '../pages/send-wishes/send-wishes';
+import { BlessingWallPage } from '../pages/blessing-wall/blessing-wall';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { BhartiKhimnaniPage } from '../pages/bharti-khimnani/bharti-khimnani';
     HomePage,
     ChooseSidePage,
     BrideProgramsPage,
-    BhartiKhimnaniPage
+    BhartiKhimnaniPage,
+    SendWishesPage,
+    BlessingWallPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import { BhartiKhimnaniPage } from '../pages/bharti-khimnani/bharti-khimnani';
     HomePage,
     ChooseSidePage,
     BrideProgramsPage,
-    BhartiKhimnaniPage
+    BhartiKhimnaniPage,
+    SendWishesPage,
+    BlessingWallPage
   ],
   providers: [
     StatusBar,

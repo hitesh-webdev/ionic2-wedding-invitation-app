@@ -39,17 +39,26 @@ page-bharti-khimnani {
 }
 .brideOptions {
     flex: 5;
+}
+.optionsFlex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     overflow-y: scroll;
 }
 .optionItem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: #fff;
     border: 3px solid #B78513;
     font-size: 2rem;
+    line-height: 80px;
+    text-align: center;
+    width: 70%;
     height: 80px;
     border-radius: 25px;
     margin-top: 10px;
+    background-color: transparent;
 }
 }

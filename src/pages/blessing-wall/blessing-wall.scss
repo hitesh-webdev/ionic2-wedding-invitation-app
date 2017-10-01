@@ -1,0 +1,63 @@
+page-blessing-wall {
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-family: cursive;
+    padding: 0px;
+    background-color: #F3DF62;
+    color: #DB4437;
+}
+.choose {
+    flex: 1;
+    background-color: #AC634C;
+    color: #fff;
+}
+.chooseHeadingFlex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+}
+.blessingWall {
+    flex: 8;
+    position: relative;
+}
+.timeline {
+    height: 100%;
+    width: 10px;
+    position: absolute;
+    left: 25px;
+    background-color: #AC634C;
+}
+.blessingCardsContainer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    padding-left: 42px;
+    overflow-y: scroll;
+}
+.msgCard {
+    position: relative;
+    color: #000;
+    margin-bottom: 30px;
+}
+.msgCard h2 {
+    color: #DB4437;
+}
+.msgIcon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-color: #fff;
+    position: absolute;
+    left: -42px;
+    top: 8px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+}
+}
