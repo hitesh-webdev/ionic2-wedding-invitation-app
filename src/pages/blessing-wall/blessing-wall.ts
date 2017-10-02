@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { SendWishesPage } from '../send-wishes/send-wishes';
 
 @Component({
   selector: 'page-blessing-wall',
@@ -10,8 +11,8 @@ export class BlessingWallPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BlessingWallPage');
+  writeBlessingNav() {
+    this.navCtrl.push(SendWishesPage, {option: 2});
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { BhartiKhimnaniPage } from '../bharti-khimnani/bharti-khimnani';
 
 @Component({
   selector: 'page-choose-side',
@@ -7,11 +8,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ChooseSidePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ChooseSidePage');
+  chooseBride() {
+    this.navCtrl.push(BhartiKhimnaniPage);
+  }
+
+  chooseGroom() {
+    this.navCtrl.push(BhartiKhimnaniPage);
   }
 
 }

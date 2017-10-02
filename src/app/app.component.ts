@@ -14,7 +14,7 @@ import { BlessingWallPage } from '../pages/blessing-wall/blessing-wall';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = BlessingWallPage;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

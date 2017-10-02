@@ -13,27 +13,35 @@
 
   <ion-row class="choose">
     <ion-col col-12 class="chooseHeadingFlex">
-      Send Wishes
+      {{option == 2 ? 'Write Blessing Message' : 'Send Wishes'}}
     </ion-col>
   </ion-row>
 
   <ion-row class="wishesForm">
     <ion-col col-12>
+
+      <form (ngSubmit)="onSendWish()" [formGroup]="wishForm">
+
       <ion-list>
           
         <ion-item>
           <ion-label floating>Your Name</ion-label>
-          <ion-input type="text" value=""></ion-input>
+          <ion-input formControlName="name" type="text" value=""></ion-input>
         </ion-item>
       
         <ion-item>
           <ion-label floating>Message</ion-label>
-          <ion-textarea rows="5"></ion-textarea>
+          <ion-textarea formControlName="message" rows="5"></ion-textarea>
         </ion-item>
 
-        <button ion-button block large class="sendBtn">SEND</button>
+        <button ion-button block large type="submit" [disabled]="!wishForm.valid" class="sendBtn">
+          {{option == 2 ? 'POST' : 'SEND'}}
+        </button>
       
       </ion-list>
+
+      </form>
+
     </ion-col>
   </ion-row>
 

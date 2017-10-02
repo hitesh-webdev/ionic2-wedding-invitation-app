@@ -11,8 +11,8 @@ export class BrideProgramsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BrideProgramsPage');
+  openMap(latitude, longitude) {
+    window.open('geo://' + latitude + ',' + longitude, '_system');
   }
 
 }
