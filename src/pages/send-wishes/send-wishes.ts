@@ -15,7 +15,7 @@ export class SendWishesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing, private formBuilder: FormBuilder, private network: Network, private alertCtrl: AlertController) {
 
-    this.network.onDisconnect().subscribe(() => {
+    if(this.network.type == 'none') {
       const alert = this.alertCtrl.create({
         title: "Internet Connection",
         subTitle:"Please Check Your Network connection",
@@ -28,7 +28,7 @@ export class SendWishesPage {
          });
       alert.present();
       this.navCtrl.pop();
-    });
+    }
 
     this.option = +navParams.get('option');
     this.setupForm();
@@ -49,7 +49,7 @@ export class SendWishesPage {
 
     //console.log(message);
     this.wishForm.reset();
-    this.socialSharing.shareViaWhatsAppToReceiver('+917792080060', message);
+    this.socialSharing.shareViaWhatsAppToReceiver('+917792080060', message, null, null);
   }
 
 }

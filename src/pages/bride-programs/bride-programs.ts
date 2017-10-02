@@ -12,7 +12,7 @@ export class BrideProgramsPage {
   }
 
   openMap(latitude, longitude) {
-    window.open('geo://' + latitude + ',' + longitude, '_system');
+    window.open('geo://?q=' + latitude + ',' + longitude + '(Destination)', '_system');
   }
 
 }
