@@ -11,8 +11,8 @@ export class BrideProgramsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  openMap(latitude, longitude) {
-    window.open('geo://?q=' + latitude + ',' + longitude + '(Destination)', '_system');
+  openMap(latitude, longitude, place) {
+    window.open('geo://?q=' + latitude + ',' + longitude + '('+ place +')', '_system');
   }
 
 }

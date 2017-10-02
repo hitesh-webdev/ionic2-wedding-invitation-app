@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { SocialSharing } from '@ionic-native/social-sharing';
 import { Network } from '@ionic-native/network';
 
 @Component({
@@ -13,7 +12,7 @@ export class SendWishesPage {
   option: number;
   wishForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing, private formBuilder: FormBuilder, private network: Network, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private network: Network, private alertCtrl: AlertController) {
 
     if(this.network.type == 'none') {
       const alert = this.alertCtrl.create({
@@ -26,18 +25,6 @@ export class SendWishesPage {
       alert.present();
       this.navCtrl.pop();
     }
-
-    this.network.onDisconnect().subscribe(() => {
-      const alert = this.alertCtrl.create({
-        title: "Internet Connection",
-        subTitle:"Please Check Your Network connection",
-        buttons: [{
-           text: 'Ok'
-           }]
-         });
-      alert.present();
-      this.navCtrl.pop();
-    });
 
     this.option = +navParams.get('option');
     this.setupForm();
@@ -54,11 +41,10 @@ export class SendWishesPage {
 
   onSendWish() {
     const name = this.wishForm.value.name;
-    const message = this.wishForm.value.message + '\nFrom: ' + name + '\n\nSent from Naresh weds Bharti App';
+    const message = this.wishForm.value.message + '%0A%0AFrom: ' + name + '%0A%0A%0ASent from Naresh weds Bharti App';
 
     //console.log(message);
     this.wishForm.reset();
-    //this.socialSharing.shareViaWhatsAppToReceiver('+917792080060', message, null, null); 
     window.open('whatsapp://send?text=' + message + '&phone=+917792080060', '_system');
   }
 
