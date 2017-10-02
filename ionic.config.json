@@ -1,6 +1,6 @@
 {
   "name": "wedding-app",
-  "app_id": "",
+  "app_id": "93a3a3d6",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
