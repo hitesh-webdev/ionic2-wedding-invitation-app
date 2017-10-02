@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { Http } from '@angular/http';
+import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { Network } from '@ionic-native/network';
 
 @Component({
@@ -12,7 +13,7 @@ export class SendWishesPage {
   option: number;
   wishForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private network: Network, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private network: Network, private alertCtrl: AlertController, private http: Http, private toastCtrl: ToastController) {
 
     if(this.network.type == 'none') {
       const alert = this.alertCtrl.create({
@@ -40,12 +41,50 @@ export class SendWishesPage {
   }
 
   onSendWish() {
-    const name = this.wishForm.value.name;
-    const message = this.wishForm.value.message + '%0A%0AFrom: ' + name + '%0A%0A%0ASent from Naresh weds Bharti App';
 
-    //console.log(message);
-    this.wishForm.reset();
-    window.open('whatsapp://send?text=' + message + '&phone=+917792080060', '_system');
+    if(this.option === 2) {
+
+      const name = this.wishForm.value.name;
+      const message = this.wishForm.value.message;
+      const timestamp = new Date().getTime();
+
+      this.http.post('https://naresh-bharti-wedding-app.firebaseio.com/blessings.json', {name: name, message: message, time: timestamp}).subscribe((response) => {
+        let toast = this.toastCtrl.create({
+          message: 'Message Posted Successfully',
+          duration: 3000,
+          position: 'bottom'
+        });
+        toast.present();
+        this.navCtrl.pop();
+      }, (err) => {
+        const alert = this.alertCtrl.create({
+          title: "Internet Connection",
+          subTitle:"Please Check Your Network connection",
+          buttons: [{
+             text: 'Ok',
+             handler: () => {
+              this.navCtrl.pop();
+             }
+             }]
+           });
+        alert.present();
+        console.log(err);
+      });
+
+      this.wishForm.reset();
+
+    }
+    else {
+
+      const name = this.wishForm.value.name;
+      const message = this.wishForm.value.message + '%0A%0AFrom: ' + name + '%0A%0A%0ASent from Naresh weds Bharti App';
+
+      //console.log(message);
+      this.wishForm.reset();
+      window.open('whatsapp://send?text=' + message + '&phone=+917792080060', '_system');
+
+    }
+
   }
 
 }

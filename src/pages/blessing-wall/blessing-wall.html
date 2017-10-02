@@ -15,7 +15,7 @@
     <ion-col col-12 class="chooseHeadingFlex">
       Blessing Wall
     </ion-col>
-  </ion-row>
+  </ion-row> 
 
   <ion-fab (click)="writeBlessingNav()" bottom right class="addBtn">
     <button ion-fab><ion-icon name="md-create"></ion-icon></button>
@@ -29,92 +29,28 @@
 
       <div class="blessingCardsContainer">
 
+      <div *ngIf="blessings">
+
       <!-- Blessing Card Start -->
-      <div class="msgCard">
+      <div class="msgCard" *ngFor="let msg of blessings">
         <div class="msgIcon">
           <ion-icon name="md-text"></ion-icon>
         </div>
         <ion-card>
           <ion-card-header>
-            <h2>Hitesh</h2>
-            <p><ion-icon name="time"></ion-icon></p>
+            <h2>{{msg.name}}</h2>
+            <p><ion-icon name="time"></ion-icon> {{msg.time | date:'fullDate'}}  {{msg.time | date:'shortTime'}}</p>
           </ion-card-header>
           <ion-card-content>
-            Stay Blessed!
+            {{msg.message}}
           </ion-card-content>
         </ion-card>
       </div>
       <!-- Blessing Card End -->
 
-      <!-- Blessing Card Start -->
-      <div class="msgCard">
-          <div class="msgIcon">
-            <ion-icon name="md-text"></ion-icon>
-          </div>
-          <ion-card>
-            <ion-card-header>
-              <h2>Hitesh</h2>
-              <p><ion-icon name="time"></ion-icon></p>
-            </ion-card-header>
-            <ion-card-content>
-              Stay Blessed!
-            </ion-card-content>
-          </ion-card>
-        </div>
-        <!-- Blessing Card End -->
+      </div>
 
-        <!-- Blessing Card Start -->
-      <div class="msgCard">
-          <div class="msgIcon">
-            <ion-icon name="md-text"></ion-icon>
-          </div>
-          <ion-card>
-            <ion-card-header>
-              <h2>Hitesh</h2>
-              <p><ion-icon name="time"></ion-icon></p>
-            </ion-card-header>
-            <ion-card-content>
-              Stay Blessed!
-            </ion-card-content>
-          </ion-card>
-        </div>
-        <!-- Blessing Card End -->
-
-        <!-- Blessing Card Start -->
-      <div class="msgCard">
-          <div class="msgIcon">
-            <ion-icon name="md-text"></ion-icon>
-          </div>
-          <ion-card>
-            <ion-card-header>
-              <h2>Hitesh</h2>
-              <p><ion-icon name="time"></ion-icon></p>
-            </ion-card-header>
-            <ion-card-content>
-              Stay Blessed!
-            </ion-card-content>
-          </ion-card>
-        </div>
-        <!-- Blessing Card End -->
-
-        <!-- Blessing Card Start -->
-      <div class="msgCard">
-          <div class="msgIcon">
-            <ion-icon name="md-text"></ion-icon>
-          </div>
-          <ion-card>
-            <ion-card-header>
-              <h2>Hitesh</h2>
-              <p><ion-icon name="time"></ion-icon></p>
-            </ion-card-header>
-            <ion-card-content>
-              Stay Blessed!
-            </ion-card-content>
-          </ion-card>
-        </div>
-        <!-- Blessing Card End -->
-
-        </div>
+      </div>
 
     </ion-col>
   </ion-row>

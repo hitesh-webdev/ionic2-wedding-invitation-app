@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { SendWishesPage } from '../send-wishes/send-wishes';
+import { Network } from '@ionic-native/network';
 
 @Component({
   selector: 'page-blessing-wall',
@@ -8,7 +10,48 @@ import { SendWishesPage } from '../send-wishes/send-wishes';
 })
 export class BlessingWallPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  blessings: any[] = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private loadingCtrl: LoadingController, private network: Network, private alertCtrl: AlertController) {
+
+    if(this.network.type == 'none') {
+      const alert = this.alertCtrl.create({
+        title: "Internet Connection",
+        subTitle:"Please Check Your Network connection",
+        buttons: [{
+           text: 'Ok'
+           }]
+         });
+      alert.present();
+      this.navCtrl.pop();
+    }
+
+  }
+
+  ionViewWillEnter() {
+
+    const loader = this.loadingCtrl.create({
+      content: 'Loading Messages'
+    });
+
+    loader.present();
+
+    this.http.get('https://naresh-bharti-wedding-app.firebaseio.com/blessings.json').subscribe((response) => {
+
+      //console.log(response.json());
+      const obj = response.json();
+      
+      this.blessings = [];
+
+      for(let key in obj){
+        this.blessings.push(obj[key]);
+      }
+
+      loader.dismiss();
+ 
+    }, (err) => {
+      console.log(err);
+    });
   }
 
   writeBlessingNav() {
