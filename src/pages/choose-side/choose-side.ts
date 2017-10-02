@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BhartiKhimnaniPage } from '../bharti-khimnani/bharti-khimnani';
+import { NareshKeswaniPage } from '../naresh-keswani/naresh-keswani';
 
 @Component({
   selector: 'page-choose-side',
