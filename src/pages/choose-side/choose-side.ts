@@ -17,7 +17,7 @@ export class ChooseSidePage {
   }
 
   chooseGroom() {
-    this.navCtrl.push(BhartiKhimnaniPage);
+    this.navCtrl.push(NareshKeswaniPage);
   }
 
 }
