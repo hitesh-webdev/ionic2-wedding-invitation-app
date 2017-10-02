@@ -11,6 +11,7 @@ import { Network } from '@ionic-native/network';
 export class BlessingWallPage {
 
   blessings: any[] = [];
+  loader: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private loadingCtrl: LoadingController, private network: Network, private alertCtrl: AlertController) {
 
@@ -30,11 +31,11 @@ export class BlessingWallPage {
 
   ionViewWillEnter() {
 
-    const loader = this.loadingCtrl.create({
+    this.loader = this.loadingCtrl.create({
       content: 'Loading Messages'
     });
 
-    loader.present();
+    this.loader.present();
 
     this.http.get('https://naresh-bharti-wedding-app.firebaseio.com/blessings.json').subscribe((response) => {
 
@@ -47,7 +48,7 @@ export class BlessingWallPage {
         this.blessings.push(obj[key]);
       }
 
-      loader.dismiss();
+      this.loader.dismiss();
  
     }, (err) => {
       console.log(err);
@@ -56,6 +57,10 @@ export class BlessingWallPage {
 
   writeBlessingNav() {
     this.navCtrl.push(SendWishesPage, {option: 2});
+  }
+
+  ionViewWillLeave() {
+    this.loader.dismiss();
   }
 
 }

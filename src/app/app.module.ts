@@ -11,7 +11,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ChooseSidePage } from '../pages/choose-side/choose-side';
 import { BrideProgramsPage } from '../pages/bride-programs/bride-programs';
+import { GroomProgramsPage } from '../pages/groom-programs/groom-programs';
 import { BhartiKhimnaniPage } from '../pages/bharti-khimnani/bharti-khimnani';
+import { NareshKeswaniPage } from '../pages/naresh-keswani/naresh-keswani';
 import { SendWishesPage } from '../pages/send-wishes/send-wishes';
 import { BlessingWallPage } from '../pages/blessing-wall/blessing-wall';
 
@@ -23,7 +25,9 @@ import { BlessingWallPage } from '../pages/blessing-wall/blessing-wall';
     BrideProgramsPage,
     BhartiKhimnaniPage,
     SendWishesPage,
-    BlessingWallPage
+    BlessingWallPage,
+    NareshKeswaniPage,
+    GroomProgramsPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import { BlessingWallPage } from '../pages/blessing-wall/blessing-wall';
     BrideProgramsPage,
     BhartiKhimnaniPage,
     SendWishesPage,
-    BlessingWallPage
+    BlessingWallPage,
+    NareshKeswaniPage,
+    GroomProgramsPage
   ],
   providers: [
     StatusBar,

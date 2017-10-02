@@ -74,6 +74,16 @@ export class SendWishesPage {
       this.wishForm.reset();
 
     }
+    else if(this.option === 1) {
+
+      const name = this.wishForm.value.name;
+      const message = this.wishForm.value.message + '%0A%0AFrom: ' + name + '%0A%0A%0ASent from Naresh weds Bharti App';
+
+      //console.log(message);
+      this.wishForm.reset();
+      window.open('whatsapp://send?text=' + message + '&phone=+919887704122', '_system');
+
+    }
     else {
 
       const name = this.wishForm.value.name;

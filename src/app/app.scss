@@ -22,6 +22,39 @@ page-home{
     background-repeat: no-repeat;
     background-position: center;
 }
+.groom {
+    background-image: url('../assets/img/groom.png');
+    background-size: cover;
+}
+.bride {
+    background-image: url('../assets/img/bride.png');
+    background-size: cover;
+}
+}
+
+page-choose-side {
+.brideImg {
+    background-image: url('../assets/img/bride.png');
+    background-size: cover;
+}
+.groomImg {
+    background-image: url('../assets/img/groom.png');
+    background-size: cover;
+}
+}
+
+page-bharti-khimnani {
+.iconImg {
+    background-image: url('../assets/img/bride.png');
+    background-size: cover;
+}
+}
+
+page-naresh-keswani {
+.iconImg {
+    background-image: url('../assets/img/groom.png');
+    background-size: cover;
+}    
 }
 
 .toolbar-background {

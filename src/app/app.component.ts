@@ -4,11 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ChooseSidePage } from '../pages/choose-side/choose-side';
-import { BrideProgramsPage } from '../pages/bride-programs/bride-programs';
-import { BhartiKhimnaniPage } from '../pages/bharti-khimnani/bharti-khimnani';
-import { SendWishesPage } from '../pages/send-wishes/send-wishes';
-import { BlessingWallPage } from '../pages/blessing-wall/blessing-wall';
+import { NareshKeswaniPage } from '../pages/naresh-keswani/naresh-keswani';
 
 @Component({
   templateUrl: 'app.html'
