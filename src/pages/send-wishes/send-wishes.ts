@@ -20,15 +20,24 @@ export class SendWishesPage {
         title: "Internet Connection",
         subTitle:"Please Check Your Network connection",
         buttons: [{
-           text: 'Ok',
-           handler: () => {
-               this.navCtrl.pop();
-              }
+           text: 'Ok'
            }]
          });
       alert.present();
       this.navCtrl.pop();
     }
+
+    this.network.onDisconnect().subscribe(() => {
+      const alert = this.alertCtrl.create({
+        title: "Internet Connection",
+        subTitle:"Please Check Your Network connection",
+        buttons: [{
+           text: 'Ok'
+           }]
+         });
+      alert.present();
+      this.navCtrl.pop();
+    });
 
     this.option = +navParams.get('option');
     this.setupForm();
@@ -49,7 +58,8 @@ export class SendWishesPage {
 
     //console.log(message);
     this.wishForm.reset();
-    this.socialSharing.shareViaWhatsAppToReceiver('+917792080060', message, null, null);
+    //this.socialSharing.shareViaWhatsAppToReceiver('+917792080060', message, null, null); 
+    window.open('whatsapp://send?text=' + message + '&phone=+917792080060', '_system');
   }
 
 }
